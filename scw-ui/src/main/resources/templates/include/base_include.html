@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 
+	
+		<div th:insert="~{include/base_include::cssFragment}"></div>
+		<div th:insert="~{include/base_include::.footerFragment}"></div>
+		<div th:insert="~{include/base_include::#jsFragment}"></div>
+	 -->
+
+
+	<!-- th:fragment="cssFragment"
+			声明提取的页面片段，其他页面中可以根据 指定的片段的值引用当前页面片段
+	 -->
+	<div th:fragment="cssFragment">
+	    <base th:href="@{/resources/}"/>
+		<link rel="stylesheet" th:href="@{/resources/bootstrap/css/bootstrap.min.css}" href="bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/carousel.css">
+		<link rel="stylesheet" href="css/login.css">
+		<link rel="stylesheet" href="css/theme.css">
+	</div>
+	<!-- 通过id指定 页面片段 -->
+	<div id="jsFragment">
+	<!-- thymeleaf的表达式 语法只能在 th开始的属性值中使用 -->
+		<!-- <script type="text/javascript" th:src="@{/resources/jquery/jquery-2.1.1.min.js}" src="/resources/jquery/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" th:src="@{/resources/bootstrap/js/bootstrap.min.js}" src="/resources/bootstrap/js/bootstrap.min.js"></script> -->
+		<script th:src="@{/resources/jquery/jquery-2.1.1.min.js}" src="jquery/jquery-2.1.1.min.js"></script>
+	    <script th:src="@{/resources/bootstrap/js/bootstrap.min.js}" src="bootstrap/js/bootstrap.min.js"></script>
+		<script th:src="@{/resources/script/docs.min.js}" src="script/docs.min.js"></script>
+	    <script  th:src="@{/resources/script/back-to-top.js}" src="script/back-to-top.js"></script>
+	    
+	</div>
+	
+	<!-- 页面版权footer -->
+	<div class="footerFragment">
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col-md-12 column">
+					<div id="footer">
+						<div class="footerNav">
+							 <a rel="nofollow" href="http://www.atguigu.com">关于我们</a> | <a rel="nofollow" href="http://www.atguigu.com">服务条款</a> | <a rel="nofollow" href="http://www.atguigu.com">免责声明</a> | <a rel="nofollow" href="http://www.atguigu.com">网站地图</a> | <a rel="nofollow" href="http://www.atguigu.com">联系我们</a>
+						</div>
+						<div class="copyRight">
+							Copyright ?2017-2017atguigu.com 版权所有
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
